@@ -39,8 +39,8 @@
 	
 	<span>http://</span>
 	<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="width:12em">
-		<input class="mdl-textfield__input" type="text" id="number" oninput="updateStatus()">
-		<label class="mdl-textfield__label" for="number">URL</label>
+		<input class="mdl-textfield__input" type="text" id="urlbar" oninput="updateStatus()">
+		<label class="mdl-textfield__label" for="urlbar">URL</label>
 	</div>
 	
 	</br>
@@ -64,13 +64,13 @@
 
 // ---------- variables ----------
 
-var EL_NUMB = document.getElementById('number');
+var EL_NUMB = document.getElementById('urlbar');
 var EL_OPWEB = document.getElementById('openWeb');
 
 // ---------- main actions ----------
 
 function openWeb(){
-	openLink("http://"+getNumber())
+	openLink("http://"+getUrlbar())
 }
 
 
@@ -87,13 +87,13 @@ function openLink(url){
 	window.open(url)
 }
 
-function getNumber(){
+function getUrlbar(){
 	return EL_NUMB.value.replace(/^0+/, '')
 }
 
 // ---------- initialization ----------
 
-window.onload = function(){restorePrefix();updateStatus()};
+window.onload = function(){updateStatus()};
 
 </script>
 
